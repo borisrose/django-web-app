@@ -1,0 +1,46 @@
+{% extends 'inventory/base.html' %}
+{% block content %}
+<h1>Welcome</h1>
+<div class="market-div">
+    {% for product in inventory %}
+    <div class="inventory-product">
+
+        <div class="title">
+            {{product.title}}
+        </div>
+        <div class="image">
+            <img src={{product.image_url}} />
+        </div>
+        <div class="description">
+            {{product.description}}
+        </div>
+
+
+    </div>
+    {% endfor %}
+</div>
+
+
+
+<!-- <div class="groups-div">
+    <p>Les groupes de ma base de données sont :
+        <ul>
+        {% for seller in sellers %}
+            <li>{{ seller.name | upper }}</li>
+        {% endfor %}
+        </ul>
+    
+    </p>
+</div> -->
+
+<!-- <div class="sellers-number-div">
+    {% if sellers|length < 4 %}
+        <p> Groupe de moins de 4 types de vendeurs </p>
+    {% elif sellers|length > 4 %}
+        <p> Groupe de plus de 4 types de vendeurs </p>
+    {% else %}
+        <p> Groupe composé de 4 types de vendeurs </p>
+    {% endif %}
+
+</div> -->
+{% endblock %}
